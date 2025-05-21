@@ -1,15 +1,6 @@
 [workspace]
 resolver = "2"
 
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-panic = "abort"
-codegen-units = 1
-lto = true
-debug = "line-tables-only"
-
 [package]
 name = "once_cell_polyfill"
 version = "1.56.0"

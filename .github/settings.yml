@@ -1,8 +1,8 @@
 # These settings are synced to GitHub by https://probot.github.io/apps/settings/
 
 repository:
-  description: "DESCRIPTION"
-  homepage: "https://docs.rs/PROJECT"
+  description: "Polyfill for `OnceCell` stdlib feature for use with older MSRVs"
+  homepage: "https://docs.rs/once_cell_polyfill"
   topics: ""
   has_issues: true
   has_projects: false

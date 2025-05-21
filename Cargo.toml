@@ -1,7 +1,21 @@
 [workspace]
 resolver = "2"
 
-[workspace.package]
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+debug = "line-tables-only"
+
+[package]
+name = "once_cell_polyfill"
+version = "1.56.0"
+description = "Polyfill for `OnceCell` stdlib feature for use with older MSRVs"
+categories = []
+keywords = []
 repository = "REPOSITORY"
 license = "MIT OR Apache-2.0"
 edition = "2021"
@@ -17,7 +31,26 @@ include = [
   "examples/**/*"
 ]
 
-[workspace.lints.rust]
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs", "--generate-link-to-definition"]
+
+[package.metadata.release]
+pre-release-replacements = [
+  {file="CHANGELOG.md", search="Unreleased", replace="{{version}}", min=1},
+  {file="CHANGELOG.md", search="\\.\\.\\.HEAD", replace="...{{tag_name}}", exactly=1},
+  {file="CHANGELOG.md", search="ReleaseDate", replace="{{date}}", min=1},
+  {file="CHANGELOG.md", search="<!-- next-header -->", replace="<!-- next-header -->\n## [Unreleased] - ReleaseDate\n", exactly=1},
+  {file="CHANGELOG.md", search="<!-- next-url -->", replace="<!-- next-url -->\n[Unreleased]: https://github.com/polyfill-rs/once_cell_polyfill/compare/{{tag_name}}...HEAD", exactly=1},
+]
+
+[features]
+default = []
+
+[dependencies]
+once_cell = "1.17.2"
+
+[lints.rust]
 rust_2018_idioms = { level = "warn", priority = -1 }
 unnameable_types = "warn"
 unreachable_pub = "warn"
@@ -26,7 +59,7 @@ unused_lifetimes = "warn"
 unused_macro_rules = "warn"
 unused_qualifications = "warn"
 
-[workspace.lints.clippy]
+[lints.clippy]
 bool_assert_comparison = "allow"
 branches_sharing_code = "allow"
 checked_conversions = "warn"
@@ -87,45 +120,3 @@ verbose_file_reads = "warn"
 wildcard_imports = "warn"
 zero_sized_map_values = "warn"
 
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-panic = "abort"
-codegen-units = 1
-lto = true
-debug = "line-tables-only"
-
-[package]
-name = "once_cell_polyfill"
-version = "1.56.0"
-description = "Polyfill for `OnceCell` stdlib feature for use with older MSRVs"
-categories = []
-keywords = []
-repository.workspace = true
-license.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-include.workspace = true
-
-[package.metadata.docs.rs]
-all-features = true
-rustdoc-args = ["--cfg", "docsrs", "--generate-link-to-definition"]
-
-[package.metadata.release]
-pre-release-replacements = [
-  {file="CHANGELOG.md", search="Unreleased", replace="{{version}}", min=1},
-  {file="CHANGELOG.md", search="\\.\\.\\.HEAD", replace="...{{tag_name}}", exactly=1},
-  {file="CHANGELOG.md", search="ReleaseDate", replace="{{date}}", min=1},
-  {file="CHANGELOG.md", search="<!-- next-header -->", replace="<!-- next-header -->\n## [Unreleased] - ReleaseDate\n", exactly=1},
-  {file="CHANGELOG.md", search="<!-- next-url -->", replace="<!-- next-url -->\n[Unreleased]: https://github.com/polyfill-rs/once_cell_polyfill/compare/{{tag_name}}...HEAD", exactly=1},
-]
-
-[features]
-default = []
-
-[dependencies]
-once_cell = "1.17.2"
-
-[lints]
-workspace = true

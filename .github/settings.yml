@@ -8,7 +8,7 @@ repository:
   has_projects: false
   has_wiki: false
   has_downloads: true
-  default_branch: main
+  default_branch: main-v1.70
 
   # Preference: people do clean commits
   allow_merge_commit: true

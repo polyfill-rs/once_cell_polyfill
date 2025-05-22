@@ -2,7 +2,7 @@
 resolver = "2"
 
 [workspace.package]
-repository = "REPOSITORY"
+repository = "https://github.com/polyfill-rs/once_cell_polyfill"
 license = "MIT OR Apache-2.0"
 edition = "2021"
 rust-version = "1.70.0"  # MSRV

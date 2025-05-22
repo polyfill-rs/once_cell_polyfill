@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Fixes
+
+- Remove `once_cell` dependency
+
 ## [1.70.0] - 2025-05-22
 
 <!-- next-url -->

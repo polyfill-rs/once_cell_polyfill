@@ -89,7 +89,7 @@ zero_sized_map_values = "warn"
 
 [package]
 name = "once_cell_polyfill"
-version = "1.70.0"
+version = "1.70.1"
 description = "Polyfill for `OnceCell` stdlib feature for use with older MSRVs"
 categories = []
 keywords = []

@@ -116,7 +116,6 @@ pre-release-replacements = [
 default = []
 
 [dependencies]
-once_cell = "1.17.2"
 
 [lints]
 workspace = true

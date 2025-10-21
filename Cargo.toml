@@ -3,7 +3,7 @@ resolver = "2"
 
 [package]
 name = "once_cell_polyfill"
-version = "1.56.0"
+version = "1.56.1"
 description = "Polyfill for `OnceCell` stdlib feature for use with older MSRVs"
 categories = []
 keywords = []

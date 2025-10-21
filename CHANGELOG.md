@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [1.70.2] - 2025-10-21
+
 ## [1.70.1] - 2025-05-22
 
 ### Fixes
@@ -16,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.70.0] - 2025-05-22
 
 <!-- next-url -->
-[Unreleased]: https://github.com/polyfill-rs/once_cell_polyfill/compare/v1.70.1...HEAD
+[Unreleased]: https://github.com/polyfill-rs/once_cell_polyfill/compare/v1.70.2...HEAD
+[1.70.2]: https://github.com/polyfill-rs/once_cell_polyfill/compare/v1.70.1...v1.70.2
 [1.70.1]: https://github.com/polyfill-rs/once_cell_polyfill/compare/v1.70.0...v1.70.1
 [1.70.0]: https://github.com/rust-cli/argfile/compare/7a72bd0e0dcfee16d8a59cb1c89042968e3d01f4...v1.70.0
